@@ -1,8 +1,7 @@
 package fhtw.chatroom_frontend;
 
-import fhtw.chatroom_frontend.chat.Chat;
-import fhtw.chatroom_frontend.chat.GroupChat;
 import fhtw.chatroom_frontend.chat.PrivateChat;
+import fhtw.chatroom_frontend.controller.PrivateChatItemController;
 import fhtw.chatroom_frontend.user.Profile;
 import fhtw.chatroom_frontend.user.User;
 import javafx.application.Application;
@@ -11,18 +10,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
-public class HelloApplication extends Application {
+public class MainApplication extends Application {
 
     public static Profile marwan = new Profile("marwan", "1234");
 
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1006, 720);
         stage.setTitle("Chat MVP!");
         stage.setScene(scene);
@@ -44,8 +40,7 @@ public class HelloApplication extends Application {
         marwan.addPrivateChat(a);
         marwan.addPrivateChat(b);
         marwan.addPrivateChat(c);
-
-        System.out.println(marwan.getPrivateChats());
+        //System.out.println(marwan.getPrivateChats());
         launch();
     }
 }

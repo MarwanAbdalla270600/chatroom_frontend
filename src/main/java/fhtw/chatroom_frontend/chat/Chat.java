@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.LinkedList;
 
 
-@Getter
-@Setter
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public abstract class Chat {

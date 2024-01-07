@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:controller="fhtw.chatroom_frontend.MainController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <HBox prefHeight="720.0" prefWidth="400.0" styleClass="gray-background" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>
@@ -107,114 +107,6 @@
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="108.0" prefWidth="329.0" styleClass="dark-gray-background">
-                     <children>
-                        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@assets/man.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <VBox alignment="CENTER_RIGHT" prefHeight="108.0" prefWidth="187.0">
-                           <children>
-                              <Label prefHeight="16.0" prefWidth="233.0" text="Mike" textFill="WHITE">
-                                 <font>
-                                    <Font name="Open Sans Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="21.0" prefWidth="187.0" text="You: Thank you but i will see you ar 3 pm" textFill="#9da7a7">
-                                 <font>
-                                    <Font name="Open Sans" size="15.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets />
-                                 </VBox.margin>
-                              </Label>
-                           </children>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="108.0" prefWidth="329.0">
-                     <children>
-                        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@assets/woman.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <VBox alignment="CENTER_RIGHT" prefHeight="82.0" prefWidth="180.0">
-                           <children>
-                              <Label prefHeight="16.0" prefWidth="233.0" text="Lucy" textFill="WHITE">
-                                 <font>
-                                    <Font name="Open Sans Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="21.0" prefWidth="221.0" text="You: Thank you but i will see you ar 3 pm" textFill="#9da7a7">
-                                 <font>
-                                    <Font name="Open Sans" size="15.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets />
-                                 </VBox.margin>
-                              </Label>
-                           </children>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </VBox>
-                        <Pane prefHeight="82.0" prefWidth="60.0">
-                           <children>
-                              <Circle fill="#50c984" layoutX="30.0" layoutY="41.0" radius="14.0" stroke="#50c984" strokeType="INSIDE" strokeWidth="0.0" />
-                              <Label layoutX="26.0" layoutY="33.0" text="1" textFill="WHITE" />
-                           </children>
-                        </Pane>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="108.0" prefWidth="329.0">
-                     <children>
-                        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@assets/man.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <VBox alignment="CENTER_RIGHT" prefHeight="82.0" prefWidth="180.0">
-                           <children>
-                              <Label prefHeight="16.0" prefWidth="233.0" text="Lucy" textFill="WHITE">
-                                 <font>
-                                    <Font name="Open Sans Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="21.0" prefWidth="221.0" text="You: Thank you but i will see you ar 3 pm" textFill="#9da7a7">
-                                 <font>
-                                    <Font name="Open Sans" size="15.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets />
-                                 </VBox.margin>
-                              </Label>
-                           </children>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </VBox>
-                        <Pane prefHeight="82.0" prefWidth="60.0">
-                           <children>
-                              <Circle fill="#50c984" layoutX="30.0" layoutY="41.0" radius="14.0" stroke="#50c984" strokeType="INSIDE" strokeWidth="0.0" />
-                              <Label layoutX="26.0" layoutY="33.0" text="1" textFill="WHITE" />
-                           </children>
-                        </Pane>
-                     </children>
                   </HBox>
                </children>
                <opaqueInsets>

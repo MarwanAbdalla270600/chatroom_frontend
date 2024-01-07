@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fhtw.chatroom_frontend.controller.PrivateChatItemController"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Label fx:id="nameLabel" textFill="WHITE">
+            <font>
+                <javafx.scene.text.Font name="Open Sans Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="messageLabel" textFill="#9da7a7">
+            <font>
+                <javafx.scene.text.Font name="Open Sans" size="15.0" />
+            </font>
+            <VBox.margin>
+                <javafx.geometry.Insets />
+            </VBox.margin>
+        </Label>
+    </children>
+</VBox>
