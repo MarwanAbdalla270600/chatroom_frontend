@@ -3,12 +3,13 @@ package fhtw.chatroom_frontend.chat;
 import fhtw.chatroom_frontend.message.PrivateChatMessage;
 import fhtw.chatroom_frontend.user.User;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.ToString;
 
 
 import java.util.LinkedList;
 import java.util.List;
-
+@Getter
 @ToString
 @EqualsAndHashCode(callSuper = true)
 public class PrivateChat extends Chat {
