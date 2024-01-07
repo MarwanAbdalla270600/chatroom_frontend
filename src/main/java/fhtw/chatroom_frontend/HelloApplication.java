@@ -3,6 +3,7 @@ package fhtw.chatroom_frontend;
 import fhtw.chatroom_frontend.chat.Chat;
 import fhtw.chatroom_frontend.chat.GroupChat;
 import fhtw.chatroom_frontend.chat.PrivateChat;
+import fhtw.chatroom_frontend.message.PrivateChatMessage;
 import fhtw.chatroom_frontend.user.Profile;
 import fhtw.chatroom_frontend.user.User;
 import javafx.application.Application;
@@ -52,6 +53,10 @@ public class HelloApplication extends Application {
         PrivateChat h = new PrivateChat(niko);
         PrivateChat i = new PrivateChat(favour);
 
+        a.addMessage(new PrivateChatMessage("hallo", true ));
+        a.addMessage(new PrivateChatMessage("wie", true ));
+        a.addMessage(new PrivateChatMessage("geht", true ));
+        a.addMessage(new PrivateChatMessage("es", true ));
 
 
         marwan.addPrivateChat(a);
@@ -63,6 +68,8 @@ public class HelloApplication extends Application {
         marwan.addPrivateChat(g);
         marwan.addPrivateChat(h);
         marwan.addPrivateChat(i);
+
+
         System.out.println(marwan.getPrivateChats());
         launch();
     }
