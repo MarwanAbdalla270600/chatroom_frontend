@@ -35,16 +35,34 @@ public class HelloApplication extends Application {
         User thomas = new User("thomas");
         User manuel = new User("manuel");
         User merkel = new User("merkel");
+        User anna = new User("anna");
+        User frank = new User("frank");
+        User max = new User("max");
+        User moritz = new User("moritz");
+        User niko = new User("niko");
+        User favour = new User("favour");
 
         PrivateChat a = new PrivateChat(thomas);
         PrivateChat b = new PrivateChat(manuel);
         PrivateChat c = new PrivateChat(merkel);
+        PrivateChat d = new PrivateChat(anna);
+        PrivateChat e = new PrivateChat(frank);
+        PrivateChat f = new PrivateChat(max);
+        PrivateChat g = new PrivateChat(moritz);
+        PrivateChat h = new PrivateChat(niko);
+        PrivateChat i = new PrivateChat(favour);
+
 
 
         marwan.addPrivateChat(a);
         marwan.addPrivateChat(b);
         marwan.addPrivateChat(c);
-
+        marwan.addPrivateChat(d);
+        marwan.addPrivateChat(e);
+        marwan.addPrivateChat(f);
+        marwan.addPrivateChat(g);
+        marwan.addPrivateChat(h);
+        marwan.addPrivateChat(i);
         System.out.println(marwan.getPrivateChats());
         launch();
     }

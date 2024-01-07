@@ -9,12 +9,16 @@ import java.util.Set;
 
 @Getter
 @EqualsAndHashCode
-@ToString
 public class User {
     protected String username;
 
 
     public User(String username) {
         this.username = username;
+    }
+
+    @Override
+    public String toString() {
+        return  username;
     }
 }
