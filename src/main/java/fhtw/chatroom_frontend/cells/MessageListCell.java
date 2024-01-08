@@ -12,7 +12,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.util.Callback;
 
 import java.time.format.DateTimeFormatter;
@@ -42,6 +44,12 @@ public class MessageListCell implements Callback<ListView<PrivateChatMessage>, L
 
                     Text messageText = new Text(message.getData());
                     Text timestampText = new Text(message.getTime().format(myFormatObj));
+                    messageText.setFill(Color.web("#46474A"));
+                    timestampText.setFill(Color.web("#46474A"));
+
+                    // Center the text inside the message bubble
+                    messageText.setTextAlignment(TextAlignment.CENTER);
+                    timestampText.setTextAlignment(TextAlignment.CENTER);
 
                     // Style the message bubble based on byMe
                     Pane messageBubble = createMessageBubble(message.isFromMe());
@@ -49,6 +57,7 @@ public class MessageListCell implements Callback<ListView<PrivateChatMessage>, L
 
                     // Create a VBox to arrange text and timestamp vertically
                     VBox messageContent = new VBox();
+                    messageContent.setAlignment(Pos.CENTER); // Center the content
                     messageContent.getChildren().addAll(messageText, timestampText);
 
                     // Set padding specifically for the right side to avoid overflow

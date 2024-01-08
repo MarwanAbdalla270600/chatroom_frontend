@@ -4,6 +4,7 @@ import fhtw.chatroom_frontend.HelloApplication;
 import fhtw.chatroom_frontend.chat.PrivateChat;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -42,11 +43,23 @@ public class ChatListCell implements Callback<ListView<PrivateChat>, ListCell<Pr
                 } else if (privateChat != null) {
                     // Create an HBox to hold all the elements
                     HBox hbox = new HBox();
-                    Image img = new Image("file:./src/main/resources/assets/woman.png");
+                    hbox.getStyleClass().add("chatcell");
+
+                    Image img;
+                    if (privateChat.getMember().getGender() == 'f' || privateChat.getMember().getGender() == 'F') {
+                        img = new Image(String.valueOf(HelloApplication.class.getResource("assets/woman.png")));
+                    } else {
+                        img = new Image(String.valueOf(HelloApplication.class.getResource("assets/man.png")));
+                    }
+
                     // Create an ImageView
                     ImageView imageView = new ImageView(img);
                     imageView.setFitHeight(60.0);
                     imageView.setFitWidth(60.0);
+
+                    // Add padding to the ImageView
+                    StackPane imagePane = new StackPane(imageView);
+                    imagePane.setPadding(new Insets(0, 10, 0, 10)); // Adjust padding as needed
 
                     // Create a VBox for the labels
                     VBox labelVBox = new VBox();
@@ -55,19 +68,19 @@ public class ChatListCell implements Callback<ListView<PrivateChat>, ListCell<Pr
                     // Create labels
                     Label nameLabel = new Label(privateChat.getMember().toString());
                     nameLabel.setFont(Font.font("Open Sans Bold", 18.0));
+                    nameLabel.setTextFill(Color.web("#ffffff"));
 
+                    // Add padding to the VBox
+                    labelVBox.setPadding(new Insets(0, 0, 0, 10)); // Adjust padding as needed
 
                     // Add labels to the VBox
                     labelVBox.getChildren().addAll(nameLabel);
 
-
-                    hbox.getChildren().addAll(imageView, labelVBox);
+                    hbox.getChildren().addAll(imagePane, labelVBox);
                     //hbox.setBackground(new Background(new BackgroundFill(Color.BLUE,null,null)));
 
                     // Set the HBox as the graphic for the cell
                     setGraphic(hbox);
-
-
                 } else {
                     setText("null");
                     setGraphic(null);

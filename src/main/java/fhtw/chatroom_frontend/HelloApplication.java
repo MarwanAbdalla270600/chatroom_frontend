@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
 
-    public static Profile profile = new Profile("marwan", "1234");
+    public static Profile profile = new Profile("marwan", 'm', "1234");
 
 
     @Override
@@ -28,15 +28,15 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
         //Profile marwan = new Profile("marwan", "1234");
 
-        User thomas = new User("thomas");
-        User manuel = new User("manuel");
-        User merkel = new User("merkel");
-        User anna = new User("anna");
-        User frank = new User("frank");
-        User max = new User("max");
-        User moritz = new User("moritz");
-        User niko = new User("niko");
-        User favour = new User("favour");
+        User thomas = new User("thomas", 'm');
+        User manuel = new User("manuel", 'm');
+        User merkel = new User("merkel", 'f');
+        User anna = new User("anna", 'f');
+        User frank = new User("frank", 'm');
+        User max = new User("maxine", 'f');
+        User moritz = new User("moritz", 'm');
+        User niko = new User("niko", 'm');
+        User favour = new User("nikolette", 'f');
 
         PrivateChat a = new PrivateChat(thomas);
         PrivateChat b = new PrivateChat(manuel);

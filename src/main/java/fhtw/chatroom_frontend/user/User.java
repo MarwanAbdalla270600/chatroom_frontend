@@ -15,8 +15,9 @@ public class User {
     protected char gender;
 
 
-    public User(String username) {
+    public User(String username, char gender) {
         this.username = username;
+        this.gender = gender;
     }
 
     @Override

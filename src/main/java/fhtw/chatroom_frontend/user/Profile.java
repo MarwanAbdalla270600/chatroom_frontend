@@ -25,8 +25,9 @@ public class Profile extends User {
 
     private List<FriendRequest> friendRequests = new ArrayList<>();
 
-    public Profile(String username, String password) {
-        super(username);
+
+    public Profile(String username, char gender,  String password) {
+        super(username, gender);
         this.password = password;
         this.friendList = new HashSet<>();
         this.groupChats = new HashSet<>();
