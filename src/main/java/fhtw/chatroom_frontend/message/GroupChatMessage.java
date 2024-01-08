@@ -10,12 +10,11 @@ import lombok.ToString;
 @ToString
 
 public class GroupChatMessage extends Message {
-    private String data;
     private User sender;
     private GroupChat receiver;
 
-    public GroupChatMessage(int messageId, String data, User sender, GroupChat receiver) {
-        this.data = data;
+    public GroupChatMessage(String data, boolean fromMe, User sender, GroupChat receiver) {
+        super(data, fromMe);
         this.sender = sender;
         this.receiver = receiver;
     }
