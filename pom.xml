@@ -93,7 +93,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>fhtw.chatroom_frontend/fhtw.chatroom_frontend.HelloApplication</mainClass>
+              <mainClass>fhtw.chatroom_frontend/fhtw.chatroom_frontend.MainApplication</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>

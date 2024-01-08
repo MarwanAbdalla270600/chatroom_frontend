@@ -1,12 +1,10 @@
 package fhtw.chatroom_frontend.cells;
 
-import fhtw.chatroom_frontend.HelloApplication;
+import fhtw.chatroom_frontend.MainApplication;
 import fhtw.chatroom_frontend.chat.PrivateChat;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -14,15 +12,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Font;
 import javafx.util.Callback;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Objects;
 
 
 public class ChatListCell implements Callback<ListView<PrivateChat>, ListCell<PrivateChat>> {
@@ -31,6 +23,7 @@ public class ChatListCell implements Callback<ListView<PrivateChat>, ListCell<Pr
     private Label username;
     @FXML
     private Label shownMessage;
+
 
 
     public ListCell<PrivateChat> call(ListView<PrivateChat> param) {
@@ -47,9 +40,9 @@ public class ChatListCell implements Callback<ListView<PrivateChat>, ListCell<Pr
 
                     Image img;
                     if (privateChat.getMember().getGender() == 'f' || privateChat.getMember().getGender() == 'F') {
-                        img = new Image(String.valueOf(HelloApplication.class.getResource("assets/woman.png")));
+                        img = new Image(String.valueOf(MainApplication.class.getResource("assets/woman.png")));
                     } else {
-                        img = new Image(String.valueOf(HelloApplication.class.getResource("assets/man.png")));
+                        img = new Image(String.valueOf(MainApplication.class.getResource("assets/man.png")));
                     }
 
                     // Create an ImageView

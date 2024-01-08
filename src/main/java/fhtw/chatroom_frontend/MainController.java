@@ -10,9 +10,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-import static fhtw.chatroom_frontend.HelloApplication.profile;
+import static fhtw.chatroom_frontend.MainApplication.profile;
 
-public class HelloController {
+public class MainController {
     @FXML
     public TextField messageField;
 
@@ -33,7 +33,7 @@ public class HelloController {
 
     @FXML
     public void initialize() {
-        setCostumCells();
+        setCustomCells();
         privateChatList.setItems(profile.getPrivateChats());
         //System.out.println(privateChatList.getSelectionModel().getSelectedIndex());
     }
@@ -43,7 +43,7 @@ public class HelloController {
         System.out.println("settings");
     }
 
-    public void setCostumCells() {
+    public void setCustomCells() {
         privateChatList.setCellFactory(new ChatListCell());
         privateChatMessageList.setCellFactory(new MessageListCell());
     }
