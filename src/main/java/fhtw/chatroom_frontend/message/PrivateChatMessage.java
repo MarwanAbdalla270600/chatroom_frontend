@@ -9,12 +9,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class PrivateChatMessage extends Message {
-    private String data;
-
-    private boolean fromMe;
-
     public PrivateChatMessage(String data, boolean fromMe) {
-        this.data = data;
-        this.fromMe = fromMe;
+        super(data, fromMe);
     }
 }

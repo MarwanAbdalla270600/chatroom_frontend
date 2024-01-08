@@ -26,3 +26,18 @@
     -fx-background-color: #50C984;
     -fx-background-radius: 100px;
 }
+
+.message-bubble {
+    -fx-padding: 20;
+    -fx-background-radius: 50;
+}
+
+/* Additional styling for messages from you */
+.message-bubble.from-me {
+    -fx-background-color: #636566;
+}
+
+/* Additional styling for messages from others */
+.message-bubble.from-others {
+    -fx-background-color: #46474A;
+}

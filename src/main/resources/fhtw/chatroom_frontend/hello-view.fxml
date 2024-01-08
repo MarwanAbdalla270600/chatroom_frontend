@@ -43,15 +43,18 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="42.0" prefWidth="200.0" stylesheets="@style.css">
                      <children>
-                        <ImageView fitHeight="25.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="25.0" fitWidth="31.0" onMouseClicked="#addFriend" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@assets/search.png" />
                            </image>
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
-                        <TextField prefHeight="24.0" prefWidth="197.0" promptText="Search" styleClass="transparent-background" stylesheets="@style.css">
+                        <TextField fx:id="friendField" prefHeight="24.0" prefWidth="197.0" promptText="Search" styleClass="transparent-background" stylesheets="@style.css">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>

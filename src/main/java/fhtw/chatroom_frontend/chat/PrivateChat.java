@@ -15,7 +15,6 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class PrivateChat extends Chat {
     private final User member;
-    private ObservableList<PrivateChatMessage> messages = FXCollections.observableArrayList();
 
     public PrivateChat(User member) {
         super();

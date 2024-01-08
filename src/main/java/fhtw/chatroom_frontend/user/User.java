@@ -12,6 +12,8 @@ import java.util.Set;
 public class User {
     protected String username;
 
+    protected char gender;
+
 
     public User(String username) {
         this.username = username;

@@ -10,9 +10,14 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 public abstract class Message {
-    private final LocalDateTime time;
+    protected final String data;
+    protected final LocalDateTime time;
+    protected boolean fromMe;
 
-    public Message() {
+
+    public Message(String data, boolean fromMe) {
+        this.fromMe = fromMe;
         this.time = LocalDateTime.now();
+        this.data = data;
     }
 }
