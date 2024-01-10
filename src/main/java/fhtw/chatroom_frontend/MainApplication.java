@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.Socket;
 
 public class MainApplication extends Application {
 
@@ -19,6 +20,7 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage stage) {
+        initialize();
         Platform.runLater(() -> {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml")); //here you can change the fxml to load
@@ -32,7 +34,7 @@ public class MainApplication extends Application {
         });
     }
 
-    public static void main(String[] args) {
+    public static void initialize() {
         User thomas = new User("thomas", 'm');
         User manuel = new User("manuel", 'm');
         User merkel = new User("merkel", 'f');
@@ -69,8 +71,10 @@ public class MainApplication extends Application {
         profile.addPrivateChat(h);
         profile.addPrivateChat(i);
 
+    }
 
-        System.out.println(profile.getPrivateChats());
+    public static void main(String[] args) throws IOException {
+        //Socket s = new Socket("localhost", 4999);
         launch();
     }
 }

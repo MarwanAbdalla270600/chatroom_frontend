@@ -11,8 +11,8 @@ module fhtw.chatroom_frontend {
     opens fhtw.chatroom_frontend to javafx.fxml;
     exports fhtw.chatroom_frontend;
     exports fhtw.chatroom_frontend.user;
-    exports fhtw.chatroom_frontend.chat;
     exports fhtw.chatroom_frontend.cells;
     exports fhtw.chatroom_frontend.message;
     exports fhtw.chatroom_frontend.services;
+    exports fhtw.chatroom_frontend.chat;
 }

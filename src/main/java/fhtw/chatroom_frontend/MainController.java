@@ -55,9 +55,14 @@ public class MainController {
     @FXML
     public void clickChatList() {
         System.out.println("list clicked");
-        activeChatLabel.setText(privateChatList.getSelectionModel().getSelectedItem().getMember().toString());
-        activeChat = privateChatList.getSelectionModel().getSelectedItem();
-        privateChatMessageList.setItems(activeChat.getMessages());
+        try{
+            activeChatLabel.setText(privateChatList.getSelectionModel().getSelectedItem().getMember().toString());
+            activeChat = privateChatList.getSelectionModel().getSelectedItem();
+            privateChatMessageList.setItems(activeChat.getMessages());
+        } catch (Exception e) {
+            System.out.println("list is empty");
+        }
+
     }
 
     @FXML
