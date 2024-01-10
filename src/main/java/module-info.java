@@ -7,6 +7,7 @@ module fhtw.chatroom_frontend {
     requires net.synedra.validatorfx;
     requires org.kordamp.bootstrapfx.core;
     requires lombok;
+    requires com.fasterxml.jackson.databind;
 
     opens fhtw.chatroom_frontend to javafx.fxml;
     exports fhtw.chatroom_frontend;

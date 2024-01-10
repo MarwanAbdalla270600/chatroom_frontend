@@ -19,19 +19,14 @@ public class CommunicationService {
     }
 
     public static boolean login(String username, String password) throws IOException {
-        PrintWriter out = new PrintWriter(MainApplication.socket.getOutputStream(), true);
-
-        /*OutputStream outputStream = MainApplication.socket.getOutputStream();
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
-*/
 
         BufferedReader in = new BufferedReader(new InputStreamReader(MainApplication.socket.getInputStream()));
-        User test = new User(username, 'm');
-       // objectOutputStream.writeObject(test);
+        User test = new User(username, password, 'm');
+        ObjectOutputStream out = new ObjectOutputStream(MainApplication.socket.getOutputStream());
+        String json = test.toJson();
+        out.writeObject(json);
 
-        out.println("This is username and pw: " + test);
 
-        System.out.println(in.readLine());
 
         return true;
     }
