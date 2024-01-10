@@ -1,6 +1,7 @@
 package fhtw.chatroom_frontend.services;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import fhtw.chatroom_frontend.MainApplication;
 import fhtw.chatroom_frontend.user.Profile;
 import fhtw.chatroom_frontend.user.User;
@@ -24,16 +25,22 @@ public class CommunicationService {
         User test = new User(username, password, 'm');
         ObjectOutputStream out = new ObjectOutputStream(MainApplication.socket.getOutputStream());
         String json = test.toJson();
+        json = json + "l";
         out.writeObject(json);
-
-
+        out.close();
+        in.close();
 
         return true;
     }
-    public static boolean register(String username, String password) {
-        System.out.println("register...");
-        System.out.println("username: " + username);
-        System.out.println("password" + password);
+    public static boolean register(String username, String password) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(MainApplication.socket.getInputStream()));
+        User test = new User(username, password, 'm');
+        ObjectOutputStream out = new ObjectOutputStream(MainApplication.socket.getOutputStream());
+        String json = test.toJson();
+        json = json + "r";
+        out.writeObject(json);
+        out.close();
+        in.close();
         return true;
     }
 }

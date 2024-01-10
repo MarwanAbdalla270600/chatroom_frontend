@@ -20,7 +20,7 @@ public class OnboardingController {
         CommunicationService.login(username.getText(), password.getText());
     }
     @FXML
-    public void register() {
+    public void register() throws IOException {
         CommunicationService.register(username.getText(), password.getText());
     }
 
