@@ -6,6 +6,7 @@ import fhtw.chatroom_frontend.chat.PrivateChat;
 import fhtw.chatroom_frontend.message.PrivateChatMessage;
 import fhtw.chatroom_frontend.services.CommunicationService;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -35,6 +36,9 @@ public class MainController {
     public void initialize() {
         setCustomCells();
         privateChatList.setItems(profile.getPrivateChats());
+        privateChatList.getSelectionModel().selectFirst();
+        activeChat =  privateChatList.getSelectionModel().getSelectedItem();
+
         //System.out.println(privateChatList.getSelectionModel().getSelectedIndex());
     }
 
@@ -72,6 +76,13 @@ public class MainController {
         System.out.println(friendField.getText());
         friendField.clear();
         CommunicationService.addFriend();
+        Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
+        infoAlert.setTitle("Information");
+        infoAlert.setHeaderText(null);
+        infoAlert.setContentText("This is a small info message.");
+
+        // Show the alert
+        infoAlert.showAndWait();
     }
 
 }

@@ -23,7 +23,7 @@ public class Profile extends User {
 
     private Set<GroupChat> groupChats;
 
-    private List<FriendRequest> friendRequests = new ArrayList<>();
+    private List<FriendRequest> friendRequests;
 
 
     public Profile(String username, char gender,  String password) {

@@ -5,6 +5,7 @@ import fhtw.chatroom_frontend.message.PrivateChatMessage;
 import fhtw.chatroom_frontend.user.Profile;
 import fhtw.chatroom_frontend.user.User;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -17,17 +18,21 @@ public class MainApplication extends Application {
 
 
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1006, 720);
-        stage.setTitle("Chat MVP!    " + profile.getUsername());
-        stage.setScene(scene);
-        stage.show();
+    public void start(Stage stage) {
+        Platform.runLater(() -> {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml")); //here you can change the fxml to load
+                Scene scene = new Scene(fxmlLoader.load(), 1006, 720);
+                stage.setTitle("Chat MVP!    " + profile.getUsername());
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                System.err.println("Error loading FXML file: " + e.getMessage());
+            }
+        });
     }
 
     public static void main(String[] args) {
-        //Profile marwan = new Profile("marwan", "1234");
-
         User thomas = new User("thomas", 'm');
         User manuel = new User("manuel", 'm');
         User merkel = new User("merkel", 'f');
