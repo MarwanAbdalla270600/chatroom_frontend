@@ -1,7 +1,10 @@
 package fhtw.chatroom_frontend;
 
+import fhtw.chatroom_frontend.services.CommunicationService;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 
 public class OnboardingController {
     @FXML
@@ -13,16 +16,12 @@ public class OnboardingController {
 
 
     @FXML
-    public void login() {
-        System.out.println("login...");
-        System.out.println(username.getText());
-        System.out.println(password.getText());
+    public void login() throws IOException {
+        CommunicationService.login(username.getText(), password.getText());
     }
     @FXML
     public void register() {
-        System.out.println("register...");
-        System.out.println(username.getText());
-        System.out.println(password.getText());
+        CommunicationService.register(username.getText(), password.getText());
     }
 
 }

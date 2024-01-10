@@ -11,9 +11,19 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.Socket;
 
 public class MainApplication extends Application {
+    public static Socket socket;
+
+    static {
+        try {
+            socket = new Socket("localhost", 12345);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public static Profile profile = new Profile("marwan", 'm', "1234");
 
@@ -23,7 +33,7 @@ public class MainApplication extends Application {
         initialize();
         Platform.runLater(() -> {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml")); //here you can change the fxml to load
+                FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("onboarding.fxml")); //here you can change the fxml to load
                 Scene scene = new Scene(fxmlLoader.load(), 1006, 720);
                 stage.setTitle("Chat MVP!    " + profile.getUsername());
                 stage.setScene(scene);
@@ -74,7 +84,8 @@ public class MainApplication extends Application {
     }
 
     public static void main(String[] args) throws IOException {
-        //Socket s = new Socket("localhost", 4999);
+
         launch();
+
     }
 }

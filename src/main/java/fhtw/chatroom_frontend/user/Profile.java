@@ -21,17 +21,17 @@ public class Profile extends User {
     //private Set<PrivateChat> privateChats;
     private ObservableList<PrivateChat> privateChats = FXCollections.observableArrayList();
 
-    private Set<GroupChat> groupChats;
+    //private Set<GroupChat> groupChats;
 
-    private List<FriendRequest> friendRequests;
+    //private List<FriendRequest> friendRequests;
 
 
     public Profile(String username, char gender,  String password) {
         super(username, gender);
         this.password = password;
         this.friendList = new HashSet<>();
-        this.groupChats = new HashSet<>();
-        this.friendRequests = new ArrayList<>();
+        //this.groupChats = new HashSet<>();
+        //this.friendRequests = new ArrayList<>();
     }
 
     public void addPrivateChat(PrivateChat chat) {
