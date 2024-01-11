@@ -16,8 +16,8 @@ import lombok.ToString;
 public class PrivateChat extends Chat {
     private final User member;
 
-    public PrivateChat(User member) {
-        super();
+    public PrivateChat(User member, int chatId) {
+        super(chatId);
         this.member = member;
     }
 

@@ -19,8 +19,8 @@ public class GroupChat extends Chat {
     private List<User> members;
     private int maxMembers;
 
-    public GroupChat(String groupName, List<User> members, int maxMembers) {
-        super();
+    public GroupChat(int chatId, String groupName, List<User> members, int maxMembers) {
+        super(chatId);
         this.groupName = groupName;
         this.members = members;
         this.maxMembers = maxMembers;

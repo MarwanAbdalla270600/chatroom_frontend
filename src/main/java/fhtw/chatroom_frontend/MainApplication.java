@@ -55,15 +55,9 @@ public class MainApplication extends Application {
         User niko = new User("niko", 'm');
         User favour = new User("nikolette", 'f');
 
-        PrivateChat a = new PrivateChat(thomas);
-        PrivateChat b = new PrivateChat(manuel);
-        PrivateChat c = new PrivateChat(merkel);
-        PrivateChat d = new PrivateChat(anna);
-        PrivateChat e = new PrivateChat(frank);
-        PrivateChat f = new PrivateChat(max);
-        PrivateChat g = new PrivateChat(moritz);
-        PrivateChat h = new PrivateChat(niko);
-        PrivateChat i = new PrivateChat(favour);
+        PrivateChat a = new PrivateChat(thomas, 0);
+        PrivateChat b = new PrivateChat(manuel, 1);
+
 
         a.addMessage(new PrivateChatMessage("hallo", false ));
         a.addMessage(new PrivateChatMessage("wie", false ));
@@ -73,13 +67,7 @@ public class MainApplication extends Application {
 
         profile.addPrivateChat(a);
         profile.addPrivateChat(b);
-        profile.addPrivateChat(c);
-        profile.addPrivateChat(d);
-        profile.addPrivateChat(e);
-        profile.addPrivateChat(f);
-        profile.addPrivateChat(g);
-        profile.addPrivateChat(h);
-        profile.addPrivateChat(i);
+
 
     }
 

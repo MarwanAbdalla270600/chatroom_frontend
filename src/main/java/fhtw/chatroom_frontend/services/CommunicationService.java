@@ -3,6 +3,8 @@ package fhtw.chatroom_frontend.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import fhtw.chatroom_frontend.MainApplication;
+import fhtw.chatroom_frontend.chat.ChatMessage;
+import fhtw.chatroom_frontend.chat.PrivateChat;
 import fhtw.chatroom_frontend.user.Profile;
 import fhtw.chatroom_frontend.user.User;
 import org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;
@@ -24,8 +26,21 @@ public class CommunicationService {
         //inObject.close();
     }
 
-    public static void sendMessage() {
+    public static void sendMessage(PrivateChat chat, String messageText) throws IOException {
         System.out.println("Send data to Server...");
+        ObjectOutputStream outObject = new ObjectOutputStream(MainApplication.socket.getOutputStream());
+        BufferedReader inReader = new BufferedReader(new InputStreamReader(MainApplication.socket.getInputStream()));
+
+        /*outObject.writeObject(MainApplication.profile.getUsername() + ";" + chat.getChatId() + ";" + messageText + 's');
+        outObject.close();*/
+        ChatMessage chatMessage = new ChatMessage(MainApplication.profile.getUsername(), chat.getChatId(), messageText);
+        outObject.writeObject(chatMessage.toJson() + "s");
+
+
+        /*String response = inReader.readLine();
+        inReader.close();
+        System.out.println(response);
+        return response.equals("true");*/
     }
 
     public static boolean addFriend(String username) throws IOException {

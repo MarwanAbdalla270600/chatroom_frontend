@@ -18,12 +18,14 @@ import java.util.LinkedList;
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public abstract class Chat {
-
+    protected int chatId;
+    private static int nextId = 0;
     protected LocalDateTime date;
     protected ObservableList<PrivateChatMessage> messages = FXCollections.observableArrayList();
 
 
-    public Chat() {
+    public Chat(int chatId) {
+        this.chatId = chatId;
         this.date = LocalDateTime.now();
     }
 }
