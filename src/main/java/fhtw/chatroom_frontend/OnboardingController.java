@@ -18,8 +18,13 @@ public class OnboardingController {
 
     @FXML
     public void login() throws IOException {
-        CommunicationService.login(username.getText(), password.getText());
-    }
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        if(CommunicationService.login(username.getText(), password.getText())) {
+            alert.setContentText("login successfull");
+        } else {
+            alert.setContentText("login failed");
+        }
+        alert.show();    }
     @FXML
     public void register() throws IOException {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

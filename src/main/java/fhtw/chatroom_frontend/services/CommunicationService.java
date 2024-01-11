@@ -27,10 +27,10 @@ public class CommunicationService {
         String json = test.toJson();
         json = json + "l";
         out.writeObject(json);
+        String respone = in.readLine();
         out.close();
         in.close();
-
-        return true;
+        return respone.equals("true");
     }
     public static boolean register(String username, String password) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(MainApplication.socket.getInputStream()));
