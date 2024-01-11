@@ -11,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 import static fhtw.chatroom_frontend.MainApplication.profile;
 
 public class MainController {
@@ -77,17 +79,17 @@ public class MainController {
     }
 
     @FXML
-    public void addFriend() {
-        System.out.println(friendField.getText());
-        friendField.clear();
-        CommunicationService.addFriend();
+    public void addFriend() throws IOException {
         Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
-        infoAlert.setTitle("Information");
-        infoAlert.setHeaderText(null);
-        infoAlert.setContentText("This is a small info message.");
-
+        String friend = friendField.getText();
+        friendField.clear();
+        if(CommunicationService.addFriend(friend)) {
+            infoAlert.setContentText("added friend");
+        } else {
+            infoAlert.setContentText("friend not found");
+        }
         // Show the alert
-        infoAlert.showAndWait();
+        infoAlert.show();
     }
 
 }

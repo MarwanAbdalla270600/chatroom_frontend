@@ -33,7 +33,7 @@ public class MainApplication extends Application {
         initialize();
         Platform.runLater(() -> {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("onboarding.fxml")); //here you can change the fxml to load
+                FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml")); //here you can change the fxml to load
                 Scene scene = new Scene(fxmlLoader.load(), 1006, 720);
                 stage.setTitle("Chat MVP!    " + profile.getUsername());
                 stage.setScene(scene);

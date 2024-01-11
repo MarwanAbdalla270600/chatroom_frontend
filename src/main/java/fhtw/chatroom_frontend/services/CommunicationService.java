@@ -15,8 +15,15 @@ public class CommunicationService {
         System.out.println("Send data to Server...");
     }
 
-    public static void addFriend() {
-        System.out.println("looking for a friend in the server...");
+    public static boolean addFriend(String username) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(MainApplication.socket.getInputStream()));
+        ObjectOutputStream out = new ObjectOutputStream(MainApplication.socket.getOutputStream());
+        out.writeObject(MainApplication.profile.getUsername() + ";" + username + 'f');
+        String response = in.readLine();
+        out.close();
+        in.close();
+        System.out.println(response);
+        return response.equals("true");
     }
 
     public static boolean login(String username, String password) throws IOException {
@@ -27,10 +34,10 @@ public class CommunicationService {
         String json = test.toJson();
         json = json + "l";
         out.writeObject(json);
-        String respone = in.readLine();
+        String response = in.readLine();
         out.close();
         in.close();
-        return respone.equals("true");
+        return response.equals("true");
     }
     public static boolean register(String username, String password) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(MainApplication.socket.getInputStream()));
@@ -39,9 +46,9 @@ public class CommunicationService {
         String json = test.toJson();
         json = json + "r";
         out.writeObject(json);
-        String respone = in.readLine();
+        String response = in.readLine();
         in.close();
         out.close();
-        return respone.equals("true");
+        return response.equals("true");
     }
 }
