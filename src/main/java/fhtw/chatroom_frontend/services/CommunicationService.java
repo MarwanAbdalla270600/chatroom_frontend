@@ -39,8 +39,9 @@ public class CommunicationService {
         String json = test.toJson();
         json = json + "r";
         out.writeObject(json);
-        out.close();
+        String respone = in.readLine();
         in.close();
-        return true;
+        out.close();
+        return respone.equals("true");
     }
 }
