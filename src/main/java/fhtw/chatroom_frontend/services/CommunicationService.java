@@ -11,6 +11,19 @@ import java.io.*;
 
 public class CommunicationService {
 
+    public static void initData() throws IOException, ClassNotFoundException {
+        //BufferedReader in = new BufferedReader(new InputStreamReader(MainApplication.socket.getInputStream()));
+        //ObjectInputStream inObject = new ObjectInputStream(MainApplication.socket.getInputStream());
+        ObjectOutputStream out = new ObjectOutputStream(MainApplication.socket.getOutputStream());
+        out.writeObject(MainApplication.profile.getUsername() + "i");
+        ObjectInputStream inObject = new ObjectInputStream(MainApplication.socket.getInputStream());
+
+        String response = (String)inObject.readObject();
+        System.out.println(response);
+        //out.close();
+        //inObject.close();
+    }
+
     public static void sendMessage() {
         System.out.println("Send data to Server...");
     }
@@ -19,8 +32,8 @@ public class CommunicationService {
         BufferedReader in = new BufferedReader(new InputStreamReader(MainApplication.socket.getInputStream()));
         ObjectOutputStream out = new ObjectOutputStream(MainApplication.socket.getOutputStream());
         out.writeObject(MainApplication.profile.getUsername() + ";" + username + 'f');
-        String response = in.readLine();
         out.close();
+        String response = in.readLine();
         in.close();
         System.out.println(response);
         return response.equals("true");
